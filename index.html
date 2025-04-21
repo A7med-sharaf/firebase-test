@@ -24,9 +24,7 @@
                 <div class="card-body">
                     <h2 class="text-center">Developer</h2>
                     <hr class="mx-auto w-100">
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum enim 
-                        eget ipsum interdum, non pellentesque felis
-                         pellentesque. Pellentesque placerat   vitae blandit est </p>
+                    <p class="text-center"></p>
                 </div>
             </div>
         </div>
@@ -78,4 +76,37 @@
   </section>
     
 </body>
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getFirestore,doc,getDoc  } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCSvZ5bcy7UQB7WCBK900sqgQckK0XIGEc",
+      authDomain: "portfolio-a0e3c.firebaseapp.com",
+      projectId: "portfolio-a0e3c",
+      storageBucket: "portfolio-a0e3c.firebasestorage.app",
+      messagingSenderId: "393845999476",
+      appId: "1:393845999476:web:615ed0891f7d8ea08fce21"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    // Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+console.log(db)
+
+let text_About=document.querySelector(".ahmed")
+
+// import { doc, getDoc } from "firebase/firestore";
+
+const docRef = doc(db, "About", "YyEs2iLRtkzaQVdDh7Pq");
+const docSnap = await getDoc(docRef);
+console.log(docSnap)
+text_About.innerHTML=docSnap.data().AboutMe
+
+  </script>
 </html>
