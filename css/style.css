@@ -1,0 +1,42 @@
+/* google fonts link*/
+
+
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.theme-text{
+    color: #8B9174;
+}
+.card-img-top{
+   width: 100%;
+   height: 300px; 
+
+}
+.card{
+    z-index: 1;
+    overflow: hidden;
+}
+.card:hover{
+    color: white;
+}
+.card::after{
+    content: "";
+    left: -100%;
+    top: 0%;
+    position: absolute;
+    background: #6c8691;
+    width: 100%;
+    height: 100%;
+    transition: 0.9s;
+    z-index: -1;
+
+}
+.card:hover::after{
+
+   left: 0%; 
+}
+
+
